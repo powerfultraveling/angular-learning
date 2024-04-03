@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { ProductsFilterComponent } from './products-filter/products-filter.component';
 import type { Product } from '../../../libs/types';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, ProductCardComponent],
+  imports: [CommonModule, ProductCardComponent, ProductsFilterComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })
@@ -46,5 +47,16 @@ export class ProductListComponent {
 
       return product;
     });
+  }
+
+  searchedWord: string;
+  displayedProducts = this.productList;
+
+  onFilterChange(value: string) {
+    this.searchedWord = value;
+
+    this.displayedProducts = this.productList.filter((product) =>
+      product.name.toLocaleLowerCase().includes(this.searchedWord.toLowerCase())
+    );
   }
 }
