@@ -1,0 +1,9 @@
+<div>
+  <div class="grid grid-cols-3 gap-x-4 px-10">
+    <app-product-card
+      *ngFor="let product of productList"
+      [product]="product"
+      (nameChange)="onNameChange($event)"
+    ></app-product-card>
+  </div>
+</div>

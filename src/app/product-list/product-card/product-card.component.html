@@ -1,0 +1,14 @@
+<div class="shadow px-4 py-6 rounded-lg">
+  <img [src]="product.image" />
+  <div class="pt-2 font-medium text-lg">{{ product.name }}</div>
+  <div>{{ product.stock }}</div>
+  <div>${{ product.price }}</div>
+  <div>
+    <input
+      type="text"
+      class="border"
+      [value]="product.name"
+      (input)="onInput($event, product.id)"
+    />
+  </div>
+</div>
