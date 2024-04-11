@@ -1,7 +1,10 @@
 <div>
+  <app-products-filter
+    (searchChanged)="onFilterChange($event)"
+  ></app-products-filter>
   <div class="grid grid-cols-3 gap-x-4 px-10">
     <app-product-card
-      *ngFor="let product of productList"
+      *ngFor="let product of displayedProducts"
       [product]="product"
       (nameChange)="onNameChange($event)"
     ></app-product-card>
