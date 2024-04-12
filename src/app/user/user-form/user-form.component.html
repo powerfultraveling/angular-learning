@@ -1,0 +1,31 @@
+<div class="pt-10">
+  <div class="text-3xl text-center">User Form</div>
+  <div class="grid grid-cols-2 gap-x-6 px-10 pt-10">
+    <form>
+      <div>
+        <div>
+          <div>Name</div>
+          <input [(ngModel)]="name" name="name" />
+        </div>
+        <div>
+          <div>Sex</div>
+          <input [(ngModel)]="sex" name="sex" />
+        </div>
+        <div>
+          <div>age</div>
+          <input type="number" [(ngModel)]="age" name="age" />
+        </div>
+        <div class="pt-10">
+          <button
+            (click)="addUser()"
+            type="button"
+            class="bg-black text-white transition-all duration-300 px-4 py-2 hover:bg-gray-600"
+          >
+            Create
+          </button>
+        </div>
+      </div>
+    </form>
+    <app-user-list></app-user-list>
+  </div>
+</div>

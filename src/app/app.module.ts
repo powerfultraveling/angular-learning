@@ -9,7 +9,6 @@ import { TestComponentComponent } from './test-component/test-component.componen
   declarations: [AppComponent, TestComponentComponent],
   imports: [AppComponent, BrowserModule, FormsModule, TestComponentComponent],
   exports: [AppComponent],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

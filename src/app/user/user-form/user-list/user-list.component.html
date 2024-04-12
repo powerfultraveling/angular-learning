@@ -1,0 +1,14 @@
+<ul class="space-y-5">
+  <li
+    *ngFor="let user of users"
+    class="bg-orange-400 px-4 py-4 flex justify-between"
+  >
+    <div>{{ user.name }}</div>
+    <button
+      class="text-xs text-purple-600 transitable hover:text-gray-300"
+      (click)="removeUser(user.name)"
+    >
+      Remove
+    </button>
+  </li>
+</ul>
